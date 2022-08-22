@@ -567,7 +567,15 @@ body::-webkit-scrollbar-thumb:hover {
   }
 
   .MainText {
-    display: none;
+    position      : absolute;
+    font-size     : 12vw;
+    top           : 85%;
+    left          : 50%;
+    word-spacing  : 10px;
+    letter-spacing: 15px;
+    text-align    : center;
+    transform     : translate(-50%, -50%);
+    z-index: 100;
   }
 
   .projectItem {
