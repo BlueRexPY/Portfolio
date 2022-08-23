@@ -33,7 +33,7 @@ const HomePage = () => {
               I appreciate the opportunity for <br />
               development and friendly staff.
               <br />
-              I also have experience with Python.
+              Had experience in creating NVP for their startups and show them to investors.
               <br />
             </p>
             <p>
