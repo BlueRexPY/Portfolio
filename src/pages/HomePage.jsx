@@ -35,7 +35,7 @@ const HomePage = () => {
               <br />
               Had experience in creating NVP for
               <br />
-              their startups and show them to investors.
+              my startups and show them to investors.
               <br />
             </p>
             <p>
