@@ -326,7 +326,7 @@ select {
 }
 
 .readMore p {
-  padding    : 50px;
+  padding    : 10px 50px 10px 50px;
   white-space: nowrap;
 }
 
