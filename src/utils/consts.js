@@ -101,6 +101,8 @@ export const SKILLS_CODE = [
   "JAVASCRIPT",
   "TYPESCRIPT",
   "PYTHON",
+  "C++",
+  "C##",
   "REACT",
   "REDUX",
   "MOBX",
