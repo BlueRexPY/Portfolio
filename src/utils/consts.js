@@ -107,6 +107,7 @@ export const SKILLS_CODE = [
   "REDUX",
   "MOBX",
   "NEXT",
+  "JEST",
   "NESTJS",
   "NODE",
   "EXPRESS",
