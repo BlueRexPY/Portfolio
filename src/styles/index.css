@@ -67,17 +67,17 @@ time,
 mark,
 audio,
 video {
-  margin        : 0;
-  padding       : 0;
-  border        : 0;
-  outline       : 0;
-  font-size     : 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
   vertical-align: baseline;
 }
 
 body {
   line-height: 1;
-  background : #212121;
+  background: #212121;
 }
 
 article,
@@ -112,33 +112,33 @@ q:after {
 }
 
 a {
-  margin         : 0;
-  padding        : 0;
-  font-size      : 100%;
-  vertical-align : baseline;
-  background     : transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
   text-decoration: none;
-  color          : rgba(255, 255, 255, 0.452);
-  transition     : 0.1s;
+  color: rgba(255, 255, 255, 0.452);
+  transition: 0.1s;
 }
 
 a:hover {
-  color     : #fff;
+  color: #fff;
   transition: 0.1s;
-  transform : scale(1.1);
+  transform: scale(1.1);
 }
 
 ins {
   background-color: #ff9;
-  color           : #000;
-  text-decoration : none;
+  color: #000;
+  text-decoration: none;
 }
 
 mark {
   background-color: #ff9;
-  color           : #000;
-  font-style      : italic;
-  font-weight     : bold;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
 
 del {
@@ -148,22 +148,22 @@ del {
 abbr[title],
 dfn[title] {
   border-bottom: 1px dotted;
-  cursor       : help;
+  cursor: help;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing : 0;
+  border-spacing: 0;
 }
 
 /* change border colour to suit your needs */
 hr {
-  display   : block;
-  height    : 1px;
-  border    : 0;
+  display: block;
+  height: 1px;
+  border: 0;
   border-top: 1px solid #cccccc;
-  margin    : 1em 0;
-  padding   : 0;
+  margin: 1em 0;
+  padding: 0;
 }
 
 input,
@@ -172,30 +172,30 @@ select {
 }
 
 * {
-  color          : #fff;
-  font-family    : Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  color: #fff;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   scroll-behavior: smooth;
 }
 
 .HpmeWrapper {
-  display         : flex;
-  flex-direction  : column;
-  flex-wrap       : wrap;
-  justify-content : flex-start;
-  align-items     : center;
-  align-content   : center;
-  padding-top     : 90%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  padding-top: 90%;
   background-color: #1D1D20;
 }
 
 
 .nav {
-  top             : 0;
+  top: 0;
   background-color: #181818d4;
-  width           : 100%;
-  height          : 50px;
-  position        : fixed;
-  z-index         : 10;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 10;
 
 
 }
@@ -205,21 +205,21 @@ select {
 }
 
 .row {
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 }
 
 .col {
-  display        : flex;
-  flex-direction : column;
-  flex-wrap      : nowrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: space-around;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 }
 
 .sa {
@@ -239,14 +239,14 @@ select {
 }
 
 .MainText {
-  position      : absolute;
-  font-size     : 12vw;
-  top           : 50%;
-  left          : 52%;
-  word-spacing  : 20px;
+  position: absolute;
+  font-size: 12vw;
+  top: 50%;
+  left: 52%;
+  word-spacing: 20px;
   letter-spacing: 50px;
-  text-align    : center;
-  transform     : translate(-50%, -50%);
+  text-align: center;
+  transform: translate(-50%, -50%);
 }
 
 .MainText:hover {
@@ -255,95 +255,95 @@ select {
 
 @keyframes textAnimation {
   0% {
-    font-family    : Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     text-decoration: none;
   }
 
   10% {
-    font-family    : Georgia, serif;
+    font-family: Georgia, serif;
     text-decoration: none;
   }
 
   20% {
-    font-family    : cursive;
+    font-family: cursive;
     text-decoration: underline;
   }
 
   30% {
-    font-family    : math;
+    font-family: math;
     text-decoration: none;
   }
 
   40% {
-    font-family    : Verdana, Arial, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
     text-decoration: none;
   }
 
   50% {
-    font-family    : Lucida Console, Courier, monospace;
+    font-family: Lucida Console, Courier, monospace;
     text-decoration: underline;
   }
 
   60% {
-    font-family    : cursive;
+    font-family: cursive;
     text-decoration: none;
   }
 
   70% {
-    font-family    : fantasy;
+    font-family: fantasy;
     text-decoration: none;
   }
 
   80% {
-    font-family    : emoji;
+    font-family: emoji;
     text-decoration: none;
   }
 
   90% {
-    font-family    : fangsong;
+    font-family: fangsong;
     text-decoration: none;
   }
 }
 
 .ruslanImg {
-  position : absolute;
-  top      : 55%;
-  left     : 48%;
+  position: absolute;
+  top: 55%;
+  left: 48%;
   transform: translate(-50%, -50%);
-  width    : 25%;
+  width: 25%;
 }
 
 .fullScrean {
-  width : 100%;
+  width: 100%;
   height: 100vh;
 }
 
 .readMore {
-  width     : 100%;
-  height    : 40px;
-  cursor    : pointer;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
   border-top: 1px solid #fff;
 }
 
 .readMore p {
-  padding    : 10px 50px 10px 50px;
+  padding: 10px 50px 10px 50px;
   white-space: nowrap;
 }
 
 .infoSide {
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-around;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 
-  width : 100%;
+  width: 100%;
   height: 150px;
 }
 
 .reactImg {
-  width    : 40%;
+  width: 40%;
   animation: 25s linear 0s normal none infinite running reactImgAnimation;
 }
 
@@ -360,128 +360,128 @@ select {
 
 .textBox {
   justify-content: space-around;
-  align-items    : flex-start;
-  align-content  : flex-start;
-  font-size      : 20px;
-  width          : 40%;
+  align-items: flex-start;
+  align-content: flex-start;
+  font-size: 20px;
+  width: 40%;
 }
 
 .textBoxProject {
   justify-content: space-around;
-  align-items    : flex-start;
-  align-content  : flex-start;
-  font-size      : 26px;
-  width          : 30%;
-  margin         : 100px;
+  align-items: flex-start;
+  align-content: flex-start;
+  font-size: 26px;
+  width: 30%;
+  margin: 100px;
 }
 
 .textBox p {
-  margin-top : 16px;
+  margin-top: 16px;
   line-height: 1.5;
-  font-size  : 16px;
+  font-size: 16px;
 }
 
 .textBox h3 {
   line-height: 1.5;
-  font-size  : 20px;
+  font-size: 20px;
 }
 
 .textBoxProject h3 {
   line-height: 1.5;
-  font-size  : 36px;
+  font-size: 36px;
 }
 
 .textBoxProject p {
-  margin-top : 16px;
+  margin-top: 16px;
   line-height: 1.5;
-  font-size  : 26px;
+  font-size: 26px;
 }
 
 .skillList {
-  width     : 90%;
-  height    : auto;
+  width: 90%;
+  height: auto;
   margin-top: 15px;
 
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 }
 
 .skillItem {
-  padding      : 6px;
+  padding: 6px;
   border-radius: 10px;
-  border       : 1px solid #fff;
-  margin       : 5px;
-  font-size    : 15px;
-  font-weight  : 100;
-  transition   : .1s;
-  cursor       : default;
+  border: 1px solid #fff;
+  margin: 5px;
+  font-size: 15px;
+  font-weight: 100;
+  transition: .1s;
+  cursor: default;
 }
 
 .skillItem:hover {
   background-color: #fff;
-  color           : #000;
-  transform       : scale(1.1);
-  transition      : .1s;
+  color: #000;
+  transform: scale(1.1);
+  transition: .1s;
 }
 
 .fullScreanAuto {
-  width     : 100%;
+  width: 100%;
   min-height: 100vh;
-  height    : auto;
+  height: auto;
 }
 
 .projectList {
-  padding-top    : 50px;
-  flex-wrap      : wrap;
+  padding-top: 50px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .projectItem {
   border-radius: 40px;
-  border       : 1px #fff solid;
-  width        : 400px;
-  min-width    : 400px;
-  max-width    : 400px;
-  height       : 200px;
-  margin       : 60px;
-  margin-top   : 20px;
+  border: 1px #fff solid;
+  width: 400px;
+  min-width: 400px;
+  max-width: 400px;
+  height: 200px;
+  margin: 60px;
+  margin-top: 20px;
 
-  display        : flex;
-  flex-direction : column;
-  flex-wrap      : nowrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: space-between;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 }
 
 .projectLogo {
-  width : 75px;
+  width: 75px;
   margin: 40px;
 }
 
 .projectItemSide {
-  width          : 70%;
-  padding-right  : 20px;
+  width: 70%;
+  padding-right: 20px;
   justify-content: flex-start;
-  align-items    : flex-start;
+  align-items: flex-start;
 }
 
 .projectItemSide h2 {
-  font-size    : 25px;
+  font-size: 25px;
   margin-bottom: 15px;
 }
 
 .projectItemSide p {
-  font-size  : 15px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
 body::-webkit-scrollbar {
-  width : 15px;
+  width: 15px;
   height: 15px;
 }
 
@@ -490,7 +490,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background   : #1D1D20;
+  background: #1D1D20;
   border-radius: 10px;
 }
 
@@ -500,51 +500,51 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 .previwe {
-  width        : 450px;
-  margin       : 100px;
+  width: 450px;
+  margin: 100px;
   border-radius: 20px;
 }
 
 .projectPage {
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 }
 
 .buttonSide {
-  width          : 100%;
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : nowrap;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
-  align-items    : center;
-  align-content  : center;
+  align-items: center;
+  align-content: center;
 }
 
 .buttonSide a {
-  color           : #000;
+  color: #000;
   background-color: #fff;
-  padding         : 5px;
-  border-radius   : 10px;
-  border          : 1px solid #fff;
-  margin          : 10px;
-  margin-top      : 20px;
-  transition      : 0.2s;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  margin: 10px;
+  margin-top: 20px;
+  transition: 0.2s;
 }
 
 .buttonSide a:hover {
-  color           : #fff;
-  border          : 1px solid #000;
+  color: #fff;
+  border: 1px solid #000;
   background-color: #000;
 }
 
 .buttonSide p:hover {
-  transform : scale(1.1);
+  transform: scale(1.1);
   transition: 0.2s;
-  cursor    : pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
@@ -561,26 +561,26 @@ body::-webkit-scrollbar-thumb:hover {
   }
 
   .ruslanImg {
-    top  : 45%;
-    left : 48%;
+    top: 45%;
+    left: 48%;
     width: 70%;
   }
 
   .MainText {
-    position      : absolute;
-    font-size     : 12vw;
-    top           : 85%;
-    left          : 50%;
-    word-spacing  : 10px;
+    position: absolute;
+    font-size: 12vw;
+    top: 85%;
+    left: 50%;
+    word-spacing: 10px;
     letter-spacing: 15px;
-    text-align    : center;
-    transform     : translate(-50%, -50%);
+    text-align: center;
+    transform: translate(-50%, -50%);
     z-index: 100;
   }
 
   .projectItem {
     transform: scale(0.8);
-    margin   : 0;
+    margin: 0;
   }
 
   #hide {
@@ -592,12 +592,12 @@ body::-webkit-scrollbar-thumb:hover {
   }
 
   .projectPage {
-    display        : flex;
-    flex-direction : column;
-    flex-wrap      : nowrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
-    align-items    : center;
-    align-content  : center;
+    align-items: center;
+    align-content: center;
   }
 
   .previwe {
@@ -606,6 +606,21 @@ body::-webkit-scrollbar-thumb:hover {
 
   .textBoxProject {
     width: 80%;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .MainText {
+    top: 83%;
+  }
+
+  .ruslanImg {
+    width: 60%;
+  }
+
+  .textBox {
+    padding-top: 100px;
   }
 
 }
