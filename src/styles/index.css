@@ -623,4 +623,8 @@ body::-webkit-scrollbar-thumb:hover {
     padding-top: 100px;
   }
 
+  .projectList{
+    margin-top:130px;
+  }
+
 }
