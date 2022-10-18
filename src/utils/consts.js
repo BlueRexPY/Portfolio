@@ -3,9 +3,30 @@ export const PORTFOLIO_ROUTE = "/project/:name";
 
 export const PROJECTS_STORE = [
   {
+    name: "TSWork",
+    description:
+      "Job search market for the IT segment.",
+    stack: [
+      "TS",
+      "Nest",
+      "Next",
+      "Jest",
+      "TestingLibrary",
+      "MongoDB",
+      "GoogleCloud",
+      "ReduxTK",
+      "AntDesign",
+    ],
+    github: "https://github.com/BlueRexPY/TSWork",
+    live: "https://ts-work.vercel.app/",
+    previwe:
+      "https://cdn.discordapp.com/attachments/736633764930912257/1032056400647561296/1.png",
+    logo: "https://cdn.discordapp.com/attachments/736633764930912257/1032056900088496168/logo.png",
+  },
+  {
     name: "TSMusic",
     description:
-      " Spotify clone online application, creation of tracks, playlists, users, saving to the cloud and database, adaptive design and much more.",
+      "Spotify clone online application, creation of tracks, playlists, users, saving to the cloud and database, adaptive design and much more.",
     stack: [
       "TS",
       "Nest",
@@ -94,7 +115,7 @@ export const PROJECTS_STORE = [
     previwe:
       "https://cdn.discordapp.com/attachments/736633764930912257/1010368069895471154/ezgif-3-895d6db1b7.gif",
     logo: "https://cdn.discordapp.com/attachments/736633764930912257/1010367438862422086/Group_6.png",
-  },
+  }
 ];
 
 export const SKILLS_CODE = [
@@ -108,8 +129,10 @@ export const SKILLS_CODE = [
   "MOBX",
   "NEXT",
   "JEST",
+  "TESTINGLIBRARAY",
   "NESTJS",
   "NODE",
+  "NODEMAILER",
   "EXPRESS",
   "HTML5",
   "CSS3",
