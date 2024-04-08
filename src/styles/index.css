@@ -173,7 +173,8 @@ select {
 
 * {
   color: #fff;
-  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   scroll-behavior: smooth;
 }
 
@@ -185,9 +186,8 @@ select {
   align-items: center;
   align-content: center;
   padding-top: 90%;
-  background-color: #1D1D20;
+  background-color: #1d1d20;
 }
-
 
 .nav {
   top: 0;
@@ -196,8 +196,6 @@ select {
   height: 50px;
   position: fixed;
   z-index: 10;
-
-
 }
 
 .nav div {
@@ -255,7 +253,8 @@ select {
 
 @keyframes textAnimation {
   0% {
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     text-decoration: none;
   }
 
@@ -313,7 +312,7 @@ select {
   width: 25%;
 }
 
-.fullScrean {
+.fullScreen {
   width: 100%;
   height: 100vh;
 }
@@ -356,7 +355,6 @@ select {
     transform: rotate(360deg);
   }
 }
-
 
 .textBox {
   justify-content: space-around;
@@ -417,7 +415,7 @@ select {
   margin: 5px;
   font-size: 15px;
   font-weight: 100;
-  transition: .1s;
+  transition: 0.1s;
   cursor: default;
 }
 
@@ -425,10 +423,10 @@ select {
   background-color: #fff;
   color: #000;
   transform: scale(1.1);
-  transition: .1s;
+  transition: 0.1s;
 }
 
-.fullScreanAuto {
+.fullScreenAuto {
   width: 100%;
   min-height: 100vh;
   height: auto;
@@ -490,7 +488,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #1D1D20;
+  background: #1d1d20;
   border-radius: 10px;
 }
 
@@ -498,8 +496,7 @@ body::-webkit-scrollbar-thumb:hover {
   background: #3a3a3a;
 }
 
-
-.previwe {
+.preview {
   width: 450px;
   margin: 100px;
   border-radius: 20px;
@@ -600,14 +597,13 @@ body::-webkit-scrollbar-thumb:hover {
     align-content: center;
   }
 
-  .previwe {
+  .preview {
     display: none;
   }
 
   .textBoxProject {
     width: 80%;
   }
-
 }
 
 @media (max-width: 360px) {
@@ -623,8 +619,7 @@ body::-webkit-scrollbar-thumb:hover {
     padding-top: 120px;
   }
 
-  .projectList{
-    margin-top:130px;
+  .projectList {
+    margin-top: 130px;
   }
-
 }

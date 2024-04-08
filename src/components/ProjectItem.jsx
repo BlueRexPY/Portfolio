@@ -43,7 +43,7 @@ ProjectItem.propTypes = {
     stack: PropTypes.array,
     github: PropTypes.string,
     live: PropTypes.string,
-    previwe: PropTypes.string,
+    preview: PropTypes.string,
     logo: PropTypes.string,
   }),
 };

@@ -7,7 +7,7 @@ const HomePage = () => {
     <>
       <Navigation />
       <div>
-        <div className="fullScrean">
+        <div className="fullScreen">
           <h1 className="MainText">RUSLAN RYSTSOV</h1>
           <img
             draggable="false"
@@ -16,7 +16,7 @@ const HomePage = () => {
             alt="ruslan"
           />
         </div>
-        <div className="fullScrean row se" id="about">
+        <div className="fullScreen row se" id="about">
           <img
             draggable="false"
             className="reactImg"
@@ -66,7 +66,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div id="projects" className="fullScreanAuto projectList row wrap">
+        <div id="projects" className="fullScreenAuto projectList row wrap">
           {PROJECTS_STORE.map((e) => {
             return <ProjectItem project={e} />;
           })}

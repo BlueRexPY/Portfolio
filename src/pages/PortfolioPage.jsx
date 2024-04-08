@@ -6,15 +6,15 @@ const PortfolioPage = () => {
   const params = useParams();
   const navigate = useNavigate();
   const project = PROJECTS_STORE.find((e) => e.name === params.name);
-  const { name, description, stack, github, live, previwe } = project;
+  const { name, description, stack, github, live, preview } = project;
   return (
-    <div className="fullScrean projectPage">
+    <div className="fullScreen projectPage">
       <div>
         <img
           draggable="false"
-          src={previwe}
-          alt="previwe"
-          className="previwe"
+          src={preview}
+          alt="preview"
+          className="preview"
         />
       </div>
       <div className="textBoxProject col">
@@ -27,14 +27,14 @@ const PortfolioPage = () => {
         </div>
         <div className="buttonSide">
           {github !== "" ? (
-            <a href={github} target="_blank">
+            <a href={github} target="_blank" rel="noreferrer">
               GITHUB
             </a>
           ) : (
             ""
           )}
           {live !== "" ? (
-            <a href={live} target="_blank">
+            <a href={live} target="_blank" rel="noreferrer">
               LIVE
             </a>
           ) : (
