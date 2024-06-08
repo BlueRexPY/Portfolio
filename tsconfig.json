@@ -1,34 +1,67 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "paths": {
-      "~*": [
-        "./src/*"
-      ]
-    }
-  },
+  "compileOnSave": true,
   "include": [
-    "src"
+    "src/**/*",
   ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "build"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "disableSizeLimit": true,
+    "forceConsistentCasingInFileNames": false,
+    "incremental": true,
+    "removeComments": true,
+    "noEmit": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": [
+        "./app/*"
+      ],
+      "@modules/*": [
+        "./modules/*"
+      ],
+      "@pages/*": [
+        "./pages/*"
+      ],
+      "@shared/*": [
+        "./shared/*"
+      ],
+      "@ui/*": [
+        "./ui/*"
+      ],
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "jest",
+    ],
+  },
   "references": [
     {
       "path": "./tsconfig.node.json"
