@@ -1,14 +1,6 @@
-import { Link, Outlet, createRootRouteWithContext } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+import { Outlet, createRootRouteWithContext } from "@tanstack/react-router";
 
-const Root = () => {
-  return (
-    <>
-      <Outlet />
-      <TanStackRouterDevtools position='bottom-right' />
-    </>
-  );
-};
+const Root = () => <Outlet />;
 
 export const Route = createRootRouteWithContext<{
   queryClient: null;

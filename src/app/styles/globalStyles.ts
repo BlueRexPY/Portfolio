@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 	:root {
-		font-family: "Consolas", "Courier New", monospace;
+		font-family: var(--font-family-primary);
 		font-size: 16px;
 		line-height: 24px;
 		font-weight: 400;
@@ -94,12 +94,14 @@ const GlobalStyles = createGlobalStyle`
 			--bg-color: #1D1C21;
 			--paper-bg-color: #1e1e1e;
 			--paper-bg-secondary-color: #272727;
-			--paper-border: #303030;
+			--paper-border-color: #4E3B65;
 
-			--primary-color: #843cd4;
+			--primary-color: #AB63F8;
+			--primary-dark-color: #843CD4;
 			--secondary-color: #e7e7e7;
 			--tertiary-color: #969696;
-			--accent-color: #e7a103;
+			--accent-color: #FEBE29;
+			--accent-dark-color: #E7A103;
 
 			--input-bg-color: #4242427c;
 			--input-bg-hover-color: #5353537a;
