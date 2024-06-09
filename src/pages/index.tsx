@@ -1,8 +1,8 @@
-import { routesPaths } from '@app/configs/router';
-import { useDarkMode } from '@shared/lib/darkMode';
-import { createFileRoute } from '@tanstack/react-router';
-import { useMemo } from 'react';
-import styled from 'styled-components';
+import { routesPaths } from "@app/configs/router";
+import { useDarkMode } from "@shared/lib/darkMode";
+import { createFileRoute } from "@tanstack/react-router";
+import { useMemo } from "react";
+import styled from "styled-components";
 
 const BigLogo = styled.img`
   width: 50%;
@@ -35,17 +35,7 @@ const Container = styled.div`
 `;
 
 const Home = () => {
-  const { t } = useTranslation();
-  const [isDarkMode] = useDarkMode();
-
-  const bannerSrc = useMemo(() => (isDarkMode ? '/bannerDark.png' : '/bannerLight.png'), [isDarkMode]);
-
-  return (
-    <Container>
-      <BigLogo src={bannerSrc} alt={t('homePage.title')} />
-      <StackList>sad</StackList>
-    </Container>
-  );
+  return <Container>sad</Container>;
 };
 
 export const Route = createFileRoute(routesPaths.home)({
