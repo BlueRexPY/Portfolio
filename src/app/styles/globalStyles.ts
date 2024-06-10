@@ -95,6 +95,7 @@ const GlobalStyles = createGlobalStyle`
 			--paper-bg-color: #1e1e1e;
 			--paper-bg-secondary-color: #272727;
 			--paper-border-color: #4E3B65;
+			--paper-border-secondary-color: #4e3b6580;
 
 			--primary-color: #AB63F8;
 			--primary-dark-color: #843CD4;
