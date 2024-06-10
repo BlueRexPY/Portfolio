@@ -51,11 +51,14 @@ const NameContainer = styled.div`
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
   align-content: flex-start;
   color: var(--secondary-color);
   width: 100%;
   white-space: nowrap;
+  height: 50px;
+  max-height: 50px;
+  overflow: hidden;
 `;
 
 const Name = styled(motion.span)`
@@ -81,6 +84,9 @@ const IndexContainer = styled.div`
   align-items: flex-start;
   align-content: flex-start;
   color: var(--secondary-color);
+  height: var(--font-line-height-xl);
+  max-height: var(--font-line-height-xl);
+  overflow: hidden;
 `;
 
 const Index = styled(motion.span)`
@@ -93,7 +99,7 @@ const Index = styled(motion.span)`
 const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
   const { isOver: isInitialAnimationOver } = useInitialAnimation();
   const [isHovered, setIsHovered] = useState(false);
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const handleOpen = () => window.open(url, "_blank");
   const handleHoverStart = () => setIsHovered(true);
@@ -103,7 +109,7 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
     const rect = e.currentTarget.getBoundingClientRect();
 
     const { clientX, clientY } = e;
-    setCursorPos({ x: clientX - rect.left, y: clientY - rect.top });
+    setCursorPosition({ x: clientX - rect.left, y: clientY - rect.top });
   };
 
   const arrowProps = useMemo(
@@ -148,12 +154,12 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
 
   const backgroundCircleProps = useMemo(
     () => ({
-      style: { x: cursorPos.x - 100, y: cursorPos.y - 100 },
+      style: { x: cursorPosition.x - 100, y: cursorPosition.y - 100 },
       animate: { opacity: isHovered ? 1 : 0 },
       initial: { opacity: 0 },
       transition: { duration: 0.1 },
     }),
-    [cursorPos, isHovered]
+    [cursorPosition, isHovered]
   );
 
   return (

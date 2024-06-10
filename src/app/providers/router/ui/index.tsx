@@ -1,18 +1,18 @@
-import { routeTree } from '@app/configs/router';
-import { RouterProvider, createRouter } from '@tanstack/react-router';
-import { Loader } from '@ui/Loader';
-import { Suspense } from 'react';
+import { routeTree } from "@app/configs/router";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
+import { Loader } from "@ui/Loader";
+import { Suspense } from "react";
 
 const router = createRouter({
   routeTree,
   context: {
     queryClient: null,
   },
-  defaultPreload: 'intent',
+  defaultPreload: "intent",
   defaultPreloadStaleTime: 0,
 });
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }
