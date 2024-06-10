@@ -1,8 +1,8 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useInitialAnimation } from "@app/context/initialAnimation";
 import type { ContactItemConfigType as Props } from "@modules/Contact/configs";
-import { animate, motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled(motion.div)`
@@ -18,8 +18,8 @@ const Container = styled(motion.div)`
   padding: var(--spacing-m);
   height: calc(100vh / 4);
   cursor: pointer;
-  transition: var(--timing-s) ease;
-  overflow: hidden !important;
+  transition: border var(--timing-s) ease;
+  overflow: hidden;
 
   &:hover {
     border: 1px solid var(--paper-border-color);
