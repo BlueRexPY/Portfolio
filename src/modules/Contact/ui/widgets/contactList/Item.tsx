@@ -2,7 +2,7 @@ import { ArrowRightOutlined } from '@ant-design/icons';
 import { useInitialAnimation } from '@app/context/initialAnimation';
 import type { ContactItemConfigType as Props } from '@modules/Contact/configs';
 import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 
 const Container = styled(motion.div)`
@@ -96,10 +96,11 @@ const Index = styled(motion.span)`
   font: var(--font-xl);
 `;
 
-const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
+const Item = ({ displayName, displayIndex, url, icon: Icon }: Props, index: number) => {
   const { isOver: isInitialAnimationOver } = useInitialAnimation();
   const [isHovered, setIsHovered] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [initialLoad, setInitialLoad] = useState(true);
 
   const handleOpen = () => window.open(url, '_blank');
   const handleHoverStart = () => setIsHovered(true);
@@ -112,21 +113,24 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
     setCursorPosition({ x: clientX - rect.left, y: clientY - rect.top });
   };
 
-  const arrowProps = useMemo(
+  const indexProps = useMemo(
     () => ({
       animate: {
-        y: isInitialAnimationOver ? (isHovered ? -10 : 0) : 40,
-        rotate: isHovered ? -45 : 0,
+        y: isInitialAnimationOver ? 0 : -40,
         opacity: isHovered ? 1 : 0.5,
       },
-      initial: { y: 40, rotate: 0, opacity: 0 },
+      initial: {
+        y: -40,
+        opacity: 0,
+      },
       transition: {
         type: 'spring',
         stiffness: 500,
         damping: 30,
+        delay: initialLoad ? index * 0.2 + 0.1 : 0,
       },
     }),
-    [isHovered, isInitialAnimationOver],
+    [isInitialAnimationOver, isHovered, index, initialLoad],
   );
 
   const nameProps = useMemo(
@@ -143,28 +147,28 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
         type: 'spring',
         stiffness: 500,
         damping: 30,
+        delay: initialLoad ? index * 0.2 + 0.2 : 0,
       },
     }),
-    [isInitialAnimationOver, isHovered],
+    [isInitialAnimationOver, isHovered, index, initialLoad],
   );
 
-  const indexProps = useMemo(
+  const arrowProps = useMemo(
     () => ({
       animate: {
-        y: isInitialAnimationOver ? 0 : -40,
+        y: isInitialAnimationOver ? (isHovered ? -10 : 0) : 40,
+        rotate: isHovered ? -45 : 0,
         opacity: isHovered ? 1 : 0.5,
       },
-      initial: {
-        y: -40,
-        opacity: 0,
-      },
+      initial: { y: 40, rotate: 0, opacity: 0 },
       transition: {
         type: 'spring',
         stiffness: 500,
         damping: 30,
+        delay: initialLoad ? index * 0.2 + 0.3 : 0,
       },
     }),
-    [isInitialAnimationOver, isHovered],
+    [isHovered, isInitialAnimationOver, index, initialLoad],
   );
 
   const backgroundCircleProps = useMemo(
@@ -180,6 +184,10 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
     }),
     [cursorPosition, isHovered],
   );
+
+  useEffect(() => {
+    setInitialLoad(false);
+  }, []);
 
   return (
     <Container
