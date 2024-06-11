@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { useSelectedSection } from '@app/context/selectedSection';
 import type { SectionEnum } from '@app/context/selectedSection';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const options = sectionsConfig.map((section) => {
   return {
@@ -70,6 +70,7 @@ type Props = {
 
 const Selector = ({ isHovered }: Props) => {
   const { section, setSection } = useSelectedSection();
+  const [initialLoad, setInitialLoad] = useState(true);
 
   const handleSelect = (key: SectionEnum) => setSection(key);
 
@@ -81,10 +82,15 @@ const Selector = ({ isHovered }: Props) => {
         type: 'spring',
         stiffness: 500,
         damping: 30,
+        delay: initialLoad ? 0.6 : 0,
       },
     }),
-    [isHovered],
+    [isHovered, initialLoad],
   );
+
+  useEffect(() => {
+    setInitialLoad(false);
+  }, []);
 
   return (
     <Container {...containerProps}>

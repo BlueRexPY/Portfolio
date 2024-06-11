@@ -12,13 +12,13 @@ const Container = styled(motion.div)`
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  align-content: flex-start;
+  align-content: center;
   width: calc(100vw / 2);
   border: 1px solid var(--paper-border-secondary-color);
   height: calc(100vh - 100vh / 4);
   transition: border var(--timing-s) ease;
   overflow: hidden;
-  padding-bottom: var(--spacing-m);
+  padding: var(--spacing-m);
 
   &:hover {
     border: 1px solid var(--paper-border-color);
@@ -34,7 +34,7 @@ const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   align-content: flex-start;
   flex-grow: 1;
@@ -82,9 +82,16 @@ const InfoSection = () => {
     setCursorPosition({ x: clientX - rect.left, y: clientY - rect.top });
   };
 
+  const Component = useMemo(
+    () => sectionsConfig.find(({ key }) => key === section)?.component || (() => null),
+    [section],
+  );
+
   return (
     <Container onMouseMove={updateCursorPosition} onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
-      <SectionContainer>{sectionsConfig.find(({ key }) => key === section)?.component || null}</SectionContainer>
+      <SectionContainer>
+        <Component isHovered={isHovered} />
+      </SectionContainer>
       <Selector isHovered={isHovered} />
       <BackgroundCircle {...backgroundCircleProps} />
     </Container>
