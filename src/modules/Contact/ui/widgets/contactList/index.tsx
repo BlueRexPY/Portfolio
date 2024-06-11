@@ -1,6 +1,6 @@
-import { contactListConfig } from "@modules/Contact/configs";
-import styled from "styled-components";
-import { Item } from "./Item";
+import { contactListConfig } from '@modules/Contact/configs';
+import styled from 'styled-components';
+import { Item } from './Item';
 
 const Container = styled.div`
   display: flex;

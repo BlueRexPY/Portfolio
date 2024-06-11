@@ -1,22 +1,24 @@
-import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
-import styled from "styled-components";
+import { useSelectedSection } from '@app/context/selectedSection';
+import { sectionsConfig } from '@modules/Info/configs/sections';
+import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import styled from 'styled-components';
+import { Selector } from './Selector';
 
 const Container = styled(motion.div)`
   position: relative;
-
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   align-content: flex-start;
   width: calc(100vw / 2);
-  padding: var(--spacing-m);
   border: 1px solid var(--paper-border-secondary-color);
   height: calc(100vh - 100vh / 4);
   transition: border var(--timing-s) ease;
   overflow: hidden;
+  padding-bottom: var(--spacing-m);
 
   &:hover {
     border: 1px solid var(--paper-border-color);
@@ -26,6 +28,17 @@ const Container = styled(motion.div)`
     width: 100%;
     height: calc(100vh - 100vh / 2);
   }
+`;
+const SectionContainer = styled.div`
+  padding: var(--spacing-m);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-grow: 1;
+  width: 100%;
 `;
 
 const BackgroundCircle = styled(motion.div)`
@@ -45,6 +58,7 @@ const BackgroundCircle = styled(motion.div)`
 `;
 
 const InfoSection = () => {
+  const { section } = useSelectedSection();
   const [isHovered, setIsHovered] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
@@ -58,7 +72,7 @@ const InfoSection = () => {
       initial: { opacity: 0 },
       transition: { duration: 0.1 },
     }),
-    [cursorPosition, isHovered]
+    [cursorPosition, isHovered],
   );
 
   const updateCursorPosition = (e) => {
@@ -69,11 +83,9 @@ const InfoSection = () => {
   };
 
   return (
-    <Container
-      onMouseMove={updateCursorPosition}
-      onHoverStart={handleHoverStart}
-      onHoverEnd={handleHoverEnd}
-    >
+    <Container onMouseMove={updateCursorPosition} onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
+      <SectionContainer>{sectionsConfig.find(({ key }) => key === section)?.component || null}</SectionContainer>
+      <Selector isHovered={isHovered} />
       <BackgroundCircle {...backgroundCircleProps} />
     </Container>
   );

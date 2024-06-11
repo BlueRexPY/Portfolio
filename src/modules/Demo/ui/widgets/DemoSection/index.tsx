@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
-import styled from "styled-components";
+import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled(motion.div)`
   position: relative;
@@ -58,7 +58,7 @@ const DemoSection = () => {
       initial: { opacity: 0 },
       transition: { duration: 0.1 },
     }),
-    [cursorPosition, isHovered]
+    [cursorPosition, isHovered],
   );
 
   const updateCursorPosition = (e) => {
@@ -69,11 +69,7 @@ const DemoSection = () => {
   };
 
   return (
-    <Container
-      onMouseMove={updateCursorPosition}
-      onHoverStart={handleHoverStart}
-      onHoverEnd={handleHoverEnd}
-    >
+    <Container onMouseMove={updateCursorPosition} onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
       <BackgroundCircle {...backgroundCircleProps} />
     </Container>
   );

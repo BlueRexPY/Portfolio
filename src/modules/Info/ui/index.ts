@@ -1,1 +1,1 @@
-export { InfoSection } from "./widgets/InfoSection";
+export { InfoSection } from './widgets/InfoSection';

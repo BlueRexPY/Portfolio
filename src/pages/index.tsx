@@ -1,9 +1,9 @@
-import { routesPaths } from "@app/configs/router";
-import { ContactList } from "@modules/Contact";
-import { DemoSection } from "@modules/Demo";
-import { InfoSection } from "@modules/Info";
-import { createFileRoute } from "@tanstack/react-router";
-import styled from "styled-components";
+import { routesPaths } from '@app/configs/router';
+import { ContactList } from '@modules/Contact';
+import { DemoSection } from '@modules/Demo';
+import { InfoSection } from '@modules/Info';
+import { createFileRoute } from '@tanstack/react-router';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;

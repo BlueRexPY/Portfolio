@@ -92,8 +92,8 @@ const GlobalStyles = createGlobalStyle`
 	
 		@media (prefers-color-scheme: dark) {
 			--bg-color: #1D1C21;
-			--paper-bg-color: #1e1e1e;
-			--paper-bg-secondary-color: #272727;
+			--paper-bg-color: #1414149b;
+			--paper-bg-secondary-color: #35353579;
 			--paper-border-color: #4E3B65;
 			--paper-border-secondary-color: #4e3b6580;
 

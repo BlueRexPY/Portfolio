@@ -1,1 +1,1 @@
-export { DemoSection } from "./widgets/DemoSection";
+export { DemoSection } from './widgets/DemoSection';

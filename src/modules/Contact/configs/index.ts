@@ -1,5 +1,5 @@
-export { contactListConfig } from "./contactList";
+export { contactListConfig } from './contactList';
 export type {
   ContactListConfigType,
   ContactItemConfigType,
-} from "./contactList";
+} from './contactList';

@@ -1,9 +1,9 @@
-import { ArrowRightOutlined } from "@ant-design/icons";
-import { useInitialAnimation } from "@app/context/initialAnimation";
-import type { ContactItemConfigType as Props } from "@modules/Contact/configs";
-import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
-import styled from "styled-components";
+import { ArrowRightOutlined } from '@ant-design/icons';
+import { useInitialAnimation } from '@app/context/initialAnimation';
+import type { ContactItemConfigType as Props } from '@modules/Contact/configs';
+import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled(motion.div)`
   position: relative;
@@ -101,7 +101,7 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  const handleOpen = () => window.open(url, "_blank");
+  const handleOpen = () => window.open(url, '_blank');
   const handleHoverStart = () => setIsHovered(true);
   const handleHoverEnd = () => setIsHovered(false);
 
@@ -119,9 +119,14 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
         rotate: isHovered ? -45 : 0,
         opacity: isHovered ? 1 : 0.5,
       },
-      initial: { y: 40, rotate: 0, opacity: 0.5 },
+      initial: { y: 40, rotate: 0, opacity: 0 },
+      transition: {
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
+      },
     }),
-    [isHovered, isInitialAnimationOver]
+    [isHovered, isInitialAnimationOver],
   );
 
   const nameProps = useMemo(
@@ -132,10 +137,15 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
       },
       initial: {
         y: 40,
-        opacity: 0.5,
+        opacity: 0,
+      },
+      transition: {
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
       },
     }),
-    [isInitialAnimationOver, isHovered]
+    [isInitialAnimationOver, isHovered],
   );
 
   const indexProps = useMemo(
@@ -146,10 +156,15 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
       },
       initial: {
         y: -40,
-        opacity: 0.5,
+        opacity: 0,
+      },
+      transition: {
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
       },
     }),
-    [isInitialAnimationOver, isHovered]
+    [isInitialAnimationOver, isHovered],
   );
 
   const backgroundCircleProps = useMemo(
@@ -157,9 +172,13 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
       style: { x: cursorPosition.x - 100, y: cursorPosition.y - 100 },
       animate: { opacity: isHovered ? 1 : 0 },
       initial: { opacity: 0 },
-      transition: { duration: 0.1 },
+      transition: {
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
+      },
     }),
-    [cursorPosition, isHovered]
+    [cursorPosition, isHovered],
   );
 
   return (
@@ -167,8 +186,7 @@ const Item = ({ displayName, displayIndex, url, icon: Icon }: Props) => {
       onMouseMove={updateCursorPosition}
       onHoverStart={handleHoverStart}
       onHoverEnd={handleHoverEnd}
-      onClick={handleOpen}
-    >
+      onClick={handleOpen}>
       <BackgroundCircle {...backgroundCircleProps} />
       <IndexContainer>
         <Index {...indexProps}>{displayIndex}</Index>

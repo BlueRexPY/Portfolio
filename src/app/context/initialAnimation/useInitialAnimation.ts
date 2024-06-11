@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { InitialAnimationContext } from "./context";
+import { useContext } from 'react';
+import { InitialAnimationContext } from './context';
 
 const useInitialAnimation = () => {
   return useContext(InitialAnimationContext);

@@ -1,4 +1,4 @@
-import { Outlet, createRootRouteWithContext } from "@tanstack/react-router";
+import { Outlet, createRootRouteWithContext } from '@tanstack/react-router';
 
 const Root = () => <Outlet />;
 
