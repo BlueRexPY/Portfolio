@@ -26,7 +26,7 @@ const Container = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 100%;
-    height: calc(100vh - 100vh / 3);
+    height: 100dvh;
   }
 `;
 
