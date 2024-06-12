@@ -1,37 +1,46 @@
-import { useInitialAnimation } from '@app/context/initialAnimation';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import { useInitialAnimation } from "@app/context/initialAnimation";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 
-type ContainerProps = {
-  isPadding: boolean;
-};
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+`;
 
-const Container = styled.p<ContainerProps>`
+const Paragraph = styled.p`
+  position: relative;
   color: var(--secondary-color);
   font: var(--font-m);
   width: 100%;
-  white-space: nowrap;
-  height: var(--font-line-height-xl);
-  max-height: var(--font-line-height-xl);
+`;
+
+const TokenContainer = styled(motion.span)`
   overflow: hidden;
   position: relative;
+  display: inline-block;
   box-sizing: content-box;
-  padding-left: ${({ isPadding }) => (isPadding ? 'var(--spacing-m)' : '0')};
+  height: var(--font-line-height-m);
+  max-height: var(--font-line-height-m);
+  white-space: nowrap;
+  font: var(--font-m);
+  margin-bottom: var(--spacing-s);
 
   @media (max-width: 768px) {
     font: var(--font-xs);
-    padding-left: ${({ isPadding }) => (isPadding ? 'var(--spacing-s)' : '0')};
-    height: var(--font-line-height-xl);
-  max-height: var(--font-line-height-xl);
-
+    margin-bottom: 0;
+    height: var(--font-line-height-s);
+    max-height: var(--font-line-height-s);
   }
 `;
 
 const Token = styled(motion.span)`
   display: inline-block;
   white-space: pre;
-
 `;
 
 type Props = {
@@ -39,9 +48,15 @@ type Props = {
   delay?: number;
   isHovered: boolean;
   padding?: boolean;
+  bullet?: boolean;
 };
 
-const AnimatedText = ({ isHovered, children, delay = 0, padding = false }: Props) => {
+const AnimatedText = ({
+  isHovered,
+  children,
+  delay = 0,
+  bullet = false,
+}: Props) => {
   const { isOver: isInitialAnimationOver } = useInitialAnimation();
   const [initialLoad, setInitialLoad] = useState(true);
 
@@ -50,23 +65,47 @@ const AnimatedText = ({ isHovered, children, delay = 0, padding = false }: Props
   }, []);
 
   return (
-    <Container isPadding={padding}>
-      {children.split(' ').map((word, index) => (
-        <Token
-          animate={{
-            y: isInitialAnimationOver ? 0 : 40,
-            opacity: isHovered ? 1 : 0.5,
-          }}
-          initial={{ y: 40, opacity: 0 }}
-          transition={{
-            type: 'spring',
-            stiffness: 500,
-            damping: 30,
-            delay: initialLoad ? index * 0.01 + delay : 0,
-          }}>
-          {word}{' '}
-        </Token>
-      ))}
+    <Container>
+      {bullet ? (
+        <TokenContainer>
+          <Token
+            animate={{
+              y: isInitialAnimationOver ? 0 : 40,
+              opacity: isHovered ? 1 : 0.5,
+            }}
+            initial={{ y: 40, opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 500,
+              damping: 30,
+              delay: initialLoad ? 0 + delay : 0,
+            }}
+          >
+            •{" "}
+          </Token>
+        </TokenContainer>
+      ) : null}
+      <Paragraph>
+        {children.split(" ").map((word, index) => (
+          <TokenContainer key={word}>
+            <Token
+              animate={{
+                y: isInitialAnimationOver ? 0 : 40,
+                opacity: isHovered ? 1 : 0.5,
+              }}
+              initial={{ y: 40, opacity: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30,
+                delay: initialLoad ? index * 0.005 + delay : 0,
+              }}
+            >
+              {word}{" "}
+            </Token>
+          </TokenContainer>
+        ))}
+      </Paragraph>
     </Container>
   );
 };

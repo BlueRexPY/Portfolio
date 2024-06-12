@@ -1,9 +1,9 @@
-import { useSelectedSection } from '@app/context/selectedSection';
-import { sectionsConfig } from '@modules/Info/configs/sections';
-import { motion } from 'framer-motion';
-import { useMemo, useState } from 'react';
-import styled from 'styled-components';
-import { Selector } from './Selector';
+import { useSelectedSection } from "@app/context/selectedSection";
+import { sectionsConfig } from "@modules/Info/configs/sections";
+import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
+import styled from "styled-components";
+import { Selector } from "./Selector";
 
 const Container = styled(motion.div)`
   position: relative;
@@ -26,9 +26,10 @@ const Container = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 100%;
-    height: calc(100vh - 100vh / 2);
+    height: calc(100vh - 100vh / 3);
   }
 `;
+
 const SectionContainer = styled.div`
   padding: var(--spacing-m);
   display: flex;
@@ -55,8 +56,8 @@ const BackgroundCircle = styled(motion.div)`
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    color-mix(in srgb, var(--primary-color) 80%, transparent 100%),
-    color-mix(in srgb, var(--primary-dark-color) 80%, transparent 100%)
+    color-mix(in srgb, var(--primary-color) 40%, transparent 100%),
+    color-mix(in srgb, var(--primary-dark-color) 20%, transparent 100%)
   );
   filter: blur(50px);
   pointer-events: none;
@@ -77,7 +78,7 @@ const InfoSection = () => {
       initial: { opacity: 0 },
       transition: { duration: 0.1 },
     }),
-    [cursorPosition, isHovered],
+    [cursorPosition, isHovered]
   );
 
   const updateCursorPosition = (e) => {
@@ -88,12 +89,18 @@ const InfoSection = () => {
   };
 
   const Component = useMemo(
-    () => sectionsConfig.find(({ key }) => key === section)?.component || (() => null),
-    [section],
+    () =>
+      sectionsConfig.find(({ key }) => key === section)?.component ||
+      (() => null),
+    [section]
   );
 
   return (
-    <Container onMouseMove={updateCursorPosition} onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
+    <Container
+      onMouseMove={updateCursorPosition}
+      onHoverStart={handleHoverStart}
+      onHoverEnd={handleHoverEnd}
+    >
       <SectionContainer>
         <Component isHovered={isHovered} />
       </SectionContainer>
