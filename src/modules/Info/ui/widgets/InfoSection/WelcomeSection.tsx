@@ -4,7 +4,13 @@ import { useMemo } from 'react';
 import styled from 'styled-components';
 
 const Icon = styled(WelcomeHandIcon)`
-margin-bottom: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+
+  @media (max-width: 768px) {
+    scale: 0.5;
+    margin-bottom: -5px;
+    margin-left: -10px;
+  }
 `;
 
 type Props = {
@@ -15,7 +21,11 @@ const WelcomeSection = ({ isHovered }: Props) => {
   const iconProps = useMemo(
     () => ({
       initial: { y: 40, opacity: 0 },
-      animate: { y: 0, opacity: isHovered ? 1 : 0.5, rotate: isHovered ? 30 : 0 },
+      animate: {
+        y: 0,
+        opacity: isHovered ? 1 : 0.5,
+        rotate: isHovered ? 30 : 0,
+      },
       transition: { type: 'spring', stiffness: 500, damping: 30 },
     }),
     [isHovered],

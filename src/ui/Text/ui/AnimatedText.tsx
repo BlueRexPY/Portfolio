@@ -3,9 +3,13 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const Container = styled.p`
+type ContainerProps = {
+  isPadding: boolean;
+};
+
+const Container = styled.p<ContainerProps>`
   color: var(--secondary-color);
-  font: var(--font-l);
+  font: var(--font-m);
   width: 100%;
   white-space: nowrap;
   height: var(--font-line-height-xl);
@@ -13,20 +17,31 @@ const Container = styled.p`
   overflow: hidden;
   position: relative;
   box-sizing: content-box;
+  padding-left: ${({ isPadding }) => (isPadding ? 'var(--spacing-m)' : '0')};
+
+  @media (max-width: 768px) {
+    font: var(--font-xs);
+    padding-left: ${({ isPadding }) => (isPadding ? 'var(--spacing-s)' : '0')};
+    height: var(--font-line-height-xl);
+  max-height: var(--font-line-height-xl);
+
+  }
 `;
 
 const Token = styled(motion.span)`
   display: inline-block;
   white-space: pre;
+
 `;
 
 type Props = {
   children: string;
   delay?: number;
   isHovered: boolean;
+  padding?: boolean;
 };
 
-const AnimatedText = ({ isHovered, children, delay = 0 }: Props) => {
+const AnimatedText = ({ isHovered, children, delay = 0, padding = false }: Props) => {
   const { isOver: isInitialAnimationOver } = useInitialAnimation();
   const [initialLoad, setInitialLoad] = useState(true);
 
@@ -35,7 +50,7 @@ const AnimatedText = ({ isHovered, children, delay = 0 }: Props) => {
   }, []);
 
   return (
-    <Container>
+    <Container isPadding={padding}>
       {children.split(' ').map((word, index) => (
         <Token
           animate={{

@@ -29,7 +29,7 @@ const Label = styled(motion.button)<LabelProps>`
   font-weight: 500;
   outline: 2px solid transparent;
   -webkit-tap-highlight-color: transparent;
-  
+
   &:hover {
     background: var(--paper-bg-secondary-color);
   }
@@ -39,7 +39,20 @@ const Label = styled(motion.button)<LabelProps>`
   }
 `;
 
-const Container = styled(motion.div)`
+const Container = styled.div`
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+  max-height: 60px;
+  height: 60px;
+`;
+
+const SelectorContainer = styled(motion.div)`
   position: static;
   z-index: 10;
   padding: var(--spacing-xs);
@@ -52,7 +65,6 @@ const Container = styled(motion.div)`
   gap: var(--spacing-xs);
   background: var(--paper-bg-color);
   border-radius: var(--border-radius-xl);
- 
 `;
 
 const Bubble = styled(motion.span)`
@@ -93,24 +105,26 @@ const Selector = ({ isHovered }: Props) => {
   }, []);
 
   return (
-    <Container {...containerProps}>
-      {options.map(({ key, label }) => {
-        return (
-          <Label selected={key === section} onClick={() => handleSelect(key)} key={key}>
-            {label}
-            {key === section && (
-              <Bubble
-                layoutId='bubble'
-                transition={{
-                  type: 'spring',
-                  stiffness: 500,
-                  damping: 30,
-                }}
-              />
-            )}
-          </Label>
-        );
-      })}
+    <Container>
+      <SelectorContainer {...containerProps}>
+        {options.map(({ key, label }) => {
+          return (
+            <Label selected={key === section} onClick={() => handleSelect(key)} key={key}>
+              {label}
+              {key === section && (
+                <Bubble
+                  layoutId='bubble'
+                  transition={{
+                    type: 'spring',
+                    stiffness: 500,
+                    damping: 30,
+                  }}
+                />
+              )}
+            </Label>
+          );
+        })}
+      </SelectorContainer>
     </Container>
   );
 };

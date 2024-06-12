@@ -1,8 +1,7 @@
 enum SectionEnum {
-  welcome = 'Welcome',
-  aboutMe = 'AboutMe',
-  workExperience = 'WorkExperience',
-  technicalSkills = 'TechnicalSkills',
+  welcome = "Welcome",
+  workExperience = "WorkExperience",
+  technicalSkills = "TechnicalSkills",
 }
 
 export { SectionEnum };

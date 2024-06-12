@@ -1,6 +1,7 @@
 import { SectionEnum } from '@app/context/selectedSection';
 import { WelcomeSection } from '../ui/widgets/InfoSection/WelcomeSection';
 import type { FC } from 'react';
+import { ExperienceSection } from '../ui/widgets/InfoSection/ExperienceSection';
 
 type SectionsConfigType = {
   key: SectionEnum;
@@ -15,19 +16,14 @@ const sectionsConfig: SectionsConfigType = [
     component: WelcomeSection,
   },
   {
-    key: SectionEnum.aboutMe,
-    displayName: 'About',
-    component: () => <>About</>,
-  },
-  {
     key: SectionEnum.workExperience,
     displayName: 'Experience',
-    component: () => <>Experience</>,
+    component: ExperienceSection,
   },
   {
     key: SectionEnum.technicalSkills,
-    displayName: 'Skills',
-    component: () => <>Skills</>,
+    displayName: 'skills',
+    component: () => <>Experience</>,
   },
 ];
 export { sectionsConfig };

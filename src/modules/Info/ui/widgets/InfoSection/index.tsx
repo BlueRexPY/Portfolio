@@ -39,6 +39,11 @@ const SectionContainer = styled.div`
   align-content: flex-start;
   flex-grow: 1;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    padding-bottom: var(--spacing-s);
+  }
 `;
 
 const BackgroundCircle = styled(motion.div)`
