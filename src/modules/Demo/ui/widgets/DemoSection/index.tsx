@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import styled from "styled-components";
+import { Content } from "./Content";
 
 const Container = styled(motion.div)`
   position: relative;
@@ -8,9 +9,9 @@ const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   width: calc(100vw / 2);
   padding: var(--spacing-m);
   border: 1px solid var(--paper-border-secondary-color);
@@ -75,6 +76,7 @@ const DemoSection = () => {
       onHoverEnd={handleHoverEnd}
     >
       <BackgroundCircle {...backgroundCircleProps} />
+      <Content isHovered={isHovered} />
     </Container>
   );
 };

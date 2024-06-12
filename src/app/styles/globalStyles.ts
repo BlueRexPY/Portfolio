@@ -66,8 +66,8 @@ const GlobalStyles = createGlobalStyle`
 		--font-line-height-xxl: 2.6rem;
 		--font-xxl: var(--font-size-xxl) / var(--font-line-height-xxl) var(--font-family-primary);
 
-		--font-size-xxxl: 5rem;
-		--font-line-height-xxxl: 5.2rem;
+		--font-size-xxxl: 4.4rem;
+		--font-line-height-xxxl: 4.6rem;
 		--font-xxxl: var(--font-size-xxxl) / var(--font-line-height-xxxl) var(--font-family-primary);
 
 		--spacing-xxs: 0.1rem;
