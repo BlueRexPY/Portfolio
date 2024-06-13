@@ -23,7 +23,7 @@ const sectionsConfig: SectionsConfigType = [
   },
   {
     key: SectionEnum.technicalSkills,
-    displayName: 'skills',
+    displayName: 'Skills',
     component: SkillsSection,
   },
 ];
