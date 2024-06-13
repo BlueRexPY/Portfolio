@@ -84,4 +84,14 @@ const skillsConfig: SkillsConfigType = [
   'https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white',
 ];
 
+const preloadImages = () => {
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  skillsConfig.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
+preloadImages();
+
 export { skillsConfig };
