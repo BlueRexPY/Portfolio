@@ -33,7 +33,7 @@ const TokenAnimatedContainer = styled(motion.div)`
   align-items: center;
   top: 0;
   z-index: 10;
-  color: var(--primary-dark-color);
+  color: var(--bg-color);
 `;
 
 const BottomText = styled.div`
@@ -91,9 +91,8 @@ const Content = ({ isHovered }: Props) => {
 
   const textContainerProps = useMemo(
     () => ({
-      initial: { opacity: 0, y: 100 },
+      initial: { opacity: 0 },
       animate: {
-        y: 0,
         opacity: isHovered ? 1 : 0.5,
       },
       transition: {
