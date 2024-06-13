@@ -1,8 +1,8 @@
-import { SectionEnum } from "@app/context/selectedSection";
-import { WelcomeSection } from "../ui/widgets/InfoSection/WelcomeSection";
-import type { FC } from "react";
-import { ExperienceSection } from "../ui/widgets/InfoSection/ExperienceSection";
-import { SkillsSection } from "../ui/widgets/InfoSection/SkillsSection";
+import { SectionEnum } from '@app/context/selectedSection';
+import { WelcomeSection } from '../ui/widgets/InfoSection/WelcomeSection';
+import type { FC } from 'react';
+import { ExperienceSection } from '../ui/widgets/InfoSection/ExperienceSection';
+import { SkillsSection } from '../ui/widgets/InfoSection/SkillsSection';
 
 type SectionsConfigType = {
   key: SectionEnum;
@@ -13,17 +13,17 @@ type SectionsConfigType = {
 const sectionsConfig: SectionsConfigType = [
   {
     key: SectionEnum.welcome,
-    displayName: "Welcome",
+    displayName: 'Welcome',
     component: WelcomeSection,
   },
   {
     key: SectionEnum.workExperience,
-    displayName: "Experience",
+    displayName: 'Experience',
     component: ExperienceSection,
   },
   {
     key: SectionEnum.technicalSkills,
-    displayName: "skills",
+    displayName: 'skills',
     component: SkillsSection,
   },
 ];

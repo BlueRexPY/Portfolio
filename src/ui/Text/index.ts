@@ -1,1 +1,1 @@
-export { AnimatedText } from "./ui/AnimatedText";
+export { AnimatedText } from './ui/AnimatedText';

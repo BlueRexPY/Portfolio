@@ -1,7 +1,7 @@
-import { useInitialAnimation } from "@app/context/initialAnimation";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { useInitialAnimation } from '@app/context/initialAnimation';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -51,12 +51,7 @@ type Props = {
   bullet?: boolean;
 };
 
-const AnimatedText = ({
-  isHovered,
-  children,
-  delay = 0,
-  bullet = false,
-}: Props) => {
+const AnimatedText = ({ isHovered, children, delay = 0, bullet = false }: Props) => {
   const { isOver: isInitialAnimationOver } = useInitialAnimation();
   const [initialLoad, setInitialLoad] = useState(true);
 
@@ -75,18 +70,17 @@ const AnimatedText = ({
             }}
             initial={{ y: 40, opacity: 0 }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 500,
               damping: 30,
               delay: initialLoad ? 0 + delay : 0,
-            }}
-          >
-            •{" "}
+            }}>
+            •{' '}
           </Token>
         </TokenContainer>
       ) : null}
       <Paragraph>
-        {children.split(" ").map((word, index) => (
+        {children.split(' ').map((word, index) => (
           <TokenContainer key={word}>
             <Token
               animate={{
@@ -95,13 +89,12 @@ const AnimatedText = ({
               }}
               initial={{ y: 40, opacity: 0 }}
               transition={{
-                type: "spring",
+                type: 'spring',
                 stiffness: 500,
                 damping: 30,
                 delay: initialLoad ? index * 0.005 + delay : 0,
-              }}
-            >
-              {word}{" "}
+              }}>
+              {word}{' '}
             </Token>
           </TokenContainer>
         ))}

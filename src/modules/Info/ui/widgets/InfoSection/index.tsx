@@ -1,9 +1,9 @@
-import { useSelectedSection } from "@app/context/selectedSection";
-import { sectionsConfig } from "@modules/Info/configs/sections";
-import { motion } from "framer-motion";
-import { useMemo, useState } from "react";
-import styled from "styled-components";
-import { Selector } from "./Selector";
+import { useSelectedSection } from '@app/context/selectedSection';
+import { sectionsConfig } from '@modules/Info/configs/sections';
+import { motion } from 'framer-motion';
+import { useMemo, useState } from 'react';
+import styled from 'styled-components';
+import { Selector } from './Selector';
 
 const Container = styled(motion.div)`
   position: relative;
@@ -78,7 +78,7 @@ const InfoSection = () => {
       initial: { opacity: 0 },
       transition: { duration: 0.1 },
     }),
-    [cursorPosition, isHovered]
+    [cursorPosition, isHovered],
   );
 
   const updateCursorPosition = (e) => {
@@ -89,18 +89,12 @@ const InfoSection = () => {
   };
 
   const Component = useMemo(
-    () =>
-      sectionsConfig.find(({ key }) => key === section)?.component ||
-      (() => null),
-    [section]
+    () => sectionsConfig.find(({ key }) => key === section)?.component || (() => null),
+    [section],
   );
 
   return (
-    <Container
-      onMouseMove={updateCursorPosition}
-      onHoverStart={handleHoverStart}
-      onHoverEnd={handleHoverEnd}
-    >
+    <Container onMouseMove={updateCursorPosition} onHoverStart={handleHoverStart} onHoverEnd={handleHoverEnd}>
       <SectionContainer>
         <Component isHovered={isHovered} />
       </SectionContainer>

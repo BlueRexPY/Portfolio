@@ -1,8 +1,8 @@
-import styled from "styled-components";
-
-import { motion } from "framer-motion";
-import { useInitialAnimation } from "@app/context/initialAnimation";
-import { useEffect, useState } from "react";
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { useInitialAnimation } from '@app/context/initialAnimation';
+import { useEffect, useMemo, useState } from 'react';
+import { backgroundText } from '@modules/Demo/configs/backgroundText';
 
 const Name = styled.h1`
   margin-top: 3.5rem;
@@ -16,6 +16,33 @@ const Name = styled.h1`
   -webkit-text-stroke: 30px var(--bg-color);
   paint-order: stroke fill;
   width: 100%;
+`;
+
+const TextContainer = styled(motion.div)`
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+`;
+
+const TokenAnimatedContainer = styled(motion.div)`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  z-index: 10;
+  color: var(--primary-dark-color);
+`;
+
+const BottomText = styled.div`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 100%;
 `;
 
 const TokenContainer = styled(motion.span)`
@@ -39,6 +66,17 @@ const Token = styled(motion.span)`
   width: 100%;
 `;
 
+const textProps = {
+  animate: {
+    y: ['0%', '-100%'],
+  },
+  transition: {
+    repeat: Number.POSITIVE_INFINITY,
+    duration: 10,
+    ease: 'linear',
+  },
+};
+
 type Props = {
   isHovered: boolean;
 };
@@ -51,6 +89,23 @@ const Content = ({ isHovered }: Props) => {
     setInitialLoad(false);
   }, []);
 
+  const textContainerProps = useMemo(
+    () => ({
+      initial: { opacity: 0, y: 100 },
+      animate: {
+        y: 0,
+        opacity: isHovered ? 1 : 0.5,
+      },
+      transition: {
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
+        delay: initialLoad ? 0.3 : 0,
+      },
+    }),
+    [isHovered, initialLoad],
+  );
+
   return (
     <>
       <Name>
@@ -62,16 +117,15 @@ const Content = ({ isHovered }: Props) => {
             }}
             initial={{ y: 80, opacity: 0 }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 500,
               damping: 30,
               delay: initialLoad ? 0.1 : 0,
-            }}
-          >
+            }}>
             Ruslan
           </Token>
         </TokenContainer>
-        <TokenContainer style={{ top: "-3.2rem" }}>
+        <TokenContainer style={{ top: '-3.2rem' }}>
           <Token
             animate={{
               y: isInitialAnimationOver ? 0 : 80,
@@ -79,16 +133,22 @@ const Content = ({ isHovered }: Props) => {
             }}
             initial={{ y: 80, opacity: 0 }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 500,
               damping: 30,
               delay: initialLoad ? 0.2 : 0,
-            }}
-          >
+            }}>
             Rystsov
           </Token>
         </TokenContainer>
       </Name>
+
+      <TextContainer {...textContainerProps}>
+        <TokenAnimatedContainer {...textProps}>
+          <div>{backgroundText}</div>
+          <BottomText>{backgroundText}</BottomText>
+        </TokenAnimatedContainer>
+      </TextContainer>
     </>
   );
 };

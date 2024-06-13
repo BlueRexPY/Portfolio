@@ -1,1 +1,1 @@
-export { WelcomeHandIcon } from "./ui/WelcomeHand";
+export { WelcomeHandIcon } from './ui/WelcomeHand';

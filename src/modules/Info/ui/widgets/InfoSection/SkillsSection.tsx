@@ -1,9 +1,9 @@
-import { useInitialAnimation } from "@app/context/initialAnimation";
-import { skillsConfig } from "@modules/Info/configs/skills";
-import { AnimatedText } from "@ui/Text";
-import { motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
-import styled from "styled-components";
+import { useInitialAnimation } from '@app/context/initialAnimation';
+import { skillsConfig } from '@modules/Info/configs/skills';
+import { AnimatedText } from '@ui/Text';
+import { motion } from 'framer-motion';
+import { useEffect, useMemo, useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
@@ -65,7 +65,7 @@ const SkillsSection = ({ isHovered }: Props) => {
             }}
             initial={{ y: 40, opacity: 0 }}
             transition={{
-              type: "spring",
+              type: 'spring',
               stiffness: 500,
               damping: 30,
               delay: initialLoad ? index * 0.005 : 0,
