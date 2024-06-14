@@ -24,6 +24,7 @@ const TextContainer = styled(motion.div)`
   height: 100%;
   position: absolute;
   top: 0;
+  cursor: default;
 `;
 
 const TokenAnimatedContainer = styled(motion.div)`
